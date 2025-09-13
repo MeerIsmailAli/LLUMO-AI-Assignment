@@ -1,5 +1,5 @@
 
-# Project Title
+# Assignment
 
 a simple djangorestframework application with mongodb using mongoengine
 You can try running locally and use the below endpoints to check.
