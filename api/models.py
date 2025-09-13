@@ -19,6 +19,5 @@ class Employee(mongoengine.Document):
     joining_date = mongoengine.DateField()
     skills = mongoengine.ListField(mongoengine.StringField())
 
-    def __str__(self):
-        return f"{self.name} ({self.employee_id})"
+    meta = {"collection": "employees"} 
     

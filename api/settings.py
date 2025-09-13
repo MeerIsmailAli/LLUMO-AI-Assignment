@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u6d%7y25i9cwoawbrj3k19a5ohv6f!%d#8f0=cj-lyby^(h1pj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -73,21 +73,14 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 
-# settings.py
-import mongoengine
-
-mongoengine.connect(
-    db="mydatabase",                 # your database name
-    host="mongodb://127.0.0.1:27017" # or Atlas connection string
-)
 
 
 # Password validation
@@ -130,3 +123,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import mongoengine
+
+mongoengine.connect(
+    db="mydatabase",                 # your database name
+    host="mongodb://127.0.0.1:27017" # or Atlas connection string
+)
