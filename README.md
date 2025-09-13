@@ -1,40 +1,51 @@
-you can try running locally and use the below endpoints to check
+
+# Project Title
+
+a simple djangorestframework application with mongodb using mongoengine
+You can try running locally and use the below endpoints to check.
 
 
-
-Sample Document Structure
+Sample Document Structure:
 {
-"employee_id": "E123",
-"name": "example",
-"department": "electronics",
-"salary": 75000,
-"joining_date": "2023-01-15",
-"skills": ["Python", "MongoDB", "APIs"]
+  "employee_id": "E123",
+  "name": "example",
+  "department": "electronics",
+  "salary": 75000,
+  "joining_date": "2023-01-15",
+  "skills": ["Python", "MongoDB", "APIs"]
 }
 
+## Section 2: CRUD Operations
 
+POST /employees/
 
+    Validation: unique employee id
 
+GET /employees/{employee_id}/
 
-section 2:
+    Fetch details, return 404 if not found
 
-post  /employees
-	validation //unique employee id
-	
-get /employees/{employee_id}
-	fetch details , return 404 if error
+PUT /employees/{employee_id}/
 
-put /employees/{employee_id}
-	only on partial updates(provided fields)
+    Only on partial updates (provided fields)
 
-delete /employees/{employee_id}
-	success/failure message
+DELETE /employees/{employee_id}/
 
-section 3:
+    Success/failure message
 
-get /employees?department=Engineering
-	return by sorting latest joined
-get /employees/avg-salary
-	use aggregations in mongodb
+## Section 3: Additional Queries
 
-get /employees/search?skill=Python
+GET /employees?department=Engineering
+
+    Return employees sorted by latest joined
+
+GET /employees/avg-salary/
+
+    Use aggregations in MongoDB
+
+GET /employees/search?skill=Python
+GET /employees/avg-salary/
+
+Use aggregations in MongoDB
+
+GET /employees/search?skill=Python
